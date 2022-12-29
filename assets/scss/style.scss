@@ -1,0 +1,99 @@
+/*
+essential styles:
+these make the slideshow work
+*/
+
+.slides {
+  position: relative;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s;
+}
+
+.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/*
+non-essential styles:
+just for appearance; change whatever you want
+*/
+
+.slide {
+  font-size: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+}
+
+.slide:nth-of-type(1) {
+  background: red;
+}
+
+.slide:nth-of-type(2) {
+  background: orange;
+}
+
+.slide:nth-of-type(3) {
+  background: green;
+}
+
+.slide:nth-of-type(4) {
+  background: blue;
+}
+
+.slide:nth-of-type(5) {
+  background: purple;
+}
+
+/*customization*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slides {
+  margin-bottom: 1em;
+  user-select: none;
+}
+
+.indicators,
+.controls {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.indicator,
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  min-width: 100px;
+  min-height: 30px;
+  user-select: none;
+  background-color: #cccccc;
+}
+
+.indicator.active {
+  background-color: tomato;
+  color: white;
+}
