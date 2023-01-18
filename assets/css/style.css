@@ -2,9 +2,18 @@
 essential styles:
 these make the slideshow work
 */
-
 body {
-  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+strong {
+  font-size: 1.3rem;
 }
 
 .slides {
@@ -44,12 +53,6 @@ just for appearance; change whatever you want
   color: #fff;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: auto;
-  overflow-x: hidden;
-}
-
 .slides {
   margin-bottom: 1em;
   user-select: none;
@@ -66,13 +69,6 @@ body {
   margin-bottom: 1em;
 }
 
-.indicators {
-  position: absolute;
-  top: 110vh;
-  left: 42%;
-  z-index: 2;
-}
-
 .indicator,
 .control {
   display: flex;
@@ -81,6 +77,13 @@ body {
   cursor: pointer;
   padding: 0.5em 1em;
   user-select: none;
+}
+
+.indicators {
+  position: absolute;
+  top: 110vh;
+  left: 42%;
+  z-index: 2;
 }
 
 .indicator {
@@ -147,6 +150,7 @@ body {
   height: 100px;
   padding: 0 50px;
 }
+
 .header__left-block {
   display: flex;
   justify-content: space-between;
@@ -164,14 +168,17 @@ body {
   max-width: 100px;
   display: flex;
 }
+
 .header__logo img {
   height: 42px;
   margin-right: -9px;
 }
+
 .header__links {
   display: flex;
   align-items: center;
 }
+
 .header__link {
   position: relative;
   margin-right: 45px;
@@ -179,6 +186,7 @@ body {
   font-size: 18px;
   color: #303030;
 }
+
 .header__link:after {
   content: "";
   position: absolute;
@@ -195,40 +203,35 @@ body {
   margin-right: 0;
 }
 
-p {
-  font-size: 1.1rem;
-}
-
-strong {
-  font-size: 1.3rem;
-}
-
 .footer {
   height: 50px;
   padding: 20px 30px;
   color: #000;
 }
-.footer .container {
+
+.container {
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-.footer .subtitle {
+
+.subtitle {
   font-size: 20px;
 }
 
-.footer .social {
+.social {
   margin-left: 20px;
 }
 
-.footer .link {
+.link {
   display: block;
   margin-top: 15px;
   font-size: 16px;
   color: #000;
 }
-.footer .call {
+
+.call {
   text-align: right;
   margin-right: 20px;
 }
