@@ -16,28 +16,45 @@ class SwipeCarousel extends Carousel {
   };
 
   _swipeStart(e) {
-    if (e instanceof MouseEvent) {
-      this.startPosX = e.pageX;
+    this.startPosX = e instanceof MouseEvent
+      ? e.pageX
+      : e.changedTouches[0].pageX;
+  }
 
-      return;
-    }
-
-    if (e instanceof TouchEvent) {
-      this.startPosX = e.changedTouches[0].pageX;
-    }
-
-  };
-
+  /* private, _swipeEnd function */
   _swipeEnd(e) {
-    if (e instanceof MouseEvent) {
-      this.endPosX = e.pageX;
-    } else if (e instanceof TouchEvent) {
-      this.endPosX = e.changedTouches[0].pageX;
-    }
+    this.endPosX = e instanceof MouseEvent
+      ? e.pageX
+      : e.changedTouches[0].pageX;
 
-    if (this.endPosX - this.startPosX > -100) this.next();
-    if (this.endPosX - this.startPosX < 100) this.prev();
-  };
+    if (this.endPosX - this.startPosX > 100) this.prev();
+    if (this.endPosX - this.startPosX < -100) this.next();
+  }
+
+  // _swipeStart(e) {
+  //   if (e instanceof MouseEvent) {
+  //     this.startPosX = e.pageX;
+  //     console.log(e)
+
+  //     return;
+  //   }
+
+  //   if (e instanceof TouchEvent) {
+  //     this.startPosX = e.changedTouches[0].pageX;
+  //   }
+
+  // };
+
+  // _swipeEnd(e) {
+  //   if (e instanceof MouseEvent) {
+  //     this.endPosX = e.pageX;
+  //   } else if (e instanceof TouchEvent) {
+  //     this.endPosX = e.changedTouches[0].pageX;
+  //   }
+
+  //   if (this.endPosX - this.startPosX > -100) this.next();
+  //   if (this.endPosX - this.startPosX < 100) this.prev();
+  // };
 
 }
 

@@ -7,22 +7,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
+  <header class="header">
+    <div class="header__left-block">
+      <div class="header__logo">
+        <img class="logo" src="assets/icons/location.png" alt="logotype">
+        <p><strong>Love</strong><span>Travel</span></p>
+      </div>
+      <nav class="header__links">
+        <a href="#" class="header__link">Фотозвіти</a>
+        <a href="#" class="header__link">Відгуки</a>
+        <a href="#" class="header__link">Про нас</a>
+      </nav>
+    </div>
+    <div class="header__right-block">
+      <button class="btn btn_white">Зв'язатися з нами</button>
+      <a href="#"><img src="assets/icons/facebook.svg" width="15px" height="15px" alt="facebook"></a>
+      <a href="#"><img src="assets/icons/instagram.svg" width="15x" height="15px" alt="instagram"></a>
+    </div>
+  </header>
+
   <div class="carousel" id="carousel">
 
     <div id="slides" class="slides">
-      <div class="slide item active">Slide 1</div>
-      <div class="slide item">Slide 2</div>
-      <div class="slide item">Slide 3</div>
-      <div class="slide item">Slide 4</div>
-      <div class="slide item">Slide 5</div>
+      <div class="slide item active" style="background-image: url(assets/img/maldives.jpg)"><span class="some"></span>
+      </div>
+      <div class="slide item" style="background-image: url(assets/img/alpes.jpg)"><span class="some"></span></div>
+      <div class="slide item" style="background-image: url(assets/img/tailand.jpg)"><span class="some"></span></div>
+      <div class="slide item" style="background-image: url(assets/img/london.jpg)"><span class="some"></span></div>
+      <div class="slide item" style="background-image: url(assets/img/egypt.jpg)"><span class="some"></span></div>
     </div>
-
   </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="social">
+        <div class="subtitle">Мы в социальных сетях:</div>
+        <a href="#" class="link">instagram</a>
+        <a href="#" class="link">facebook</a>
+      </div>
+      <div class="pepper">
+        <img src="assets/img/heart.jpg" alt="heart" width="80px" height="80px">
+      </div>
+      <div class="call">
+        <div class="subtitle">Или позвоните нам</div>
+        <a href="#" class="link">+380678341034</a>
+        <a href="#" class="link">+380500941356</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="assets/js/index.js" type="module"></script>
 

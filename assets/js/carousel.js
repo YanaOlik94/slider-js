@@ -10,6 +10,7 @@ class Carousel {
   }
 
   _initProps() {
+    this.box = document.querySelector('.some')
     this.SLIDES_COUNT = this.slideItems.length;
     this.CODE_LEFT_ARROW = 'ArrowLeft';
     this.CODE_RIGHT_ARROW = 'ArrowRight';
@@ -66,8 +67,8 @@ class Carousel {
     this.prevBtn.addEventListener('click', this.prev.bind(this));
     this.nextBtn.addEventListener('click', this.next.bind(this));
     this.indicatorsContainer.addEventListener('click', this._indicate.bind(this));
-    this.container.addEventListener('mouseenter', this.pause.bind(this));
-    this.container.addEventListener('mouseleave', this.play.bind(this))
+    // this.container.addEventListener('mouseenter', this.pause.bind(this));
+    // this.container.addEventListener('mouseleave', this.play.bind(this))
     document.addEventListener('keydown', this._pressKey.bind(this));
   }
 
@@ -92,6 +93,12 @@ class Carousel {
     if (target && target.classList.contains('indicator')) {
       this.pause();
       this._goToNth(+target.dataset.slideTo);
+    }
+
+    if (target.dataset.slideTo == 0) {
+      this.container.querySelector('.slide').innerHTML = 'Найпопулярніші маршрути';
+    } else {
+      this.container.querySelector('.slide').innerHTML = 'Подоружуй з нами';
     }
   }
 

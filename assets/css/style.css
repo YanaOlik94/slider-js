@@ -3,6 +3,10 @@ essential styles:
 these make the slideshow work
 */
 
+body {
+  margin: 0;
+}
+
 .slides {
   position: relative;
   height: 150px;
@@ -40,35 +44,19 @@ just for appearance; change whatever you want
   color: #fff;
 }
 
-.slide:nth-of-type(1) {
-  background: red;
-}
-
-.slide:nth-of-type(2) {
-  background: orange;
-}
-
-.slide:nth-of-type(3) {
-  background: green;
-}
-
-.slide:nth-of-type(4) {
-  background: blue;
-}
-
-.slide:nth-of-type(5) {
-  background: purple;
-}
-
-/*customization*/
-
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  overflow-x: hidden;
 }
 
 .slides {
   margin-bottom: 1em;
   user-select: none;
+  width: 97vw;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .indicators,
@@ -78,22 +66,169 @@ body {
   margin-bottom: 1em;
 }
 
+.indicators {
+  position: absolute;
+  top: 110vh;
+  left: 42%;
+  z-index: 2;
+}
+
 .indicator,
 .control {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding: 0.5em 1em;
+  user-select: none;
+}
+
+.indicator {
+  width: 28px;
+  height: 2px;
+  padding: 2px;
+  background-color: #fff;
+  opacity: 0.3;
   border: 1px solid gray;
   border-radius: 1em;
-  padding: 0.5em 1em;
-  min-width: 100px;
-  min-height: 30px;
-  user-select: none;
-  background-color: #cccccc;
 }
 
 .indicator.active {
-  background-color: tomato;
-  color: white;
+  background-color: #fff;
+  opacity: 0.9;
+}
+
+.control-pause {
+  position: absolute;
+  top: 55%;
+  left: calc(50% - 11vw);
+  font-size: 7rem;
+  color: #fff;
+  opacity: 0;
+  transition: 3s;
+  z-index: 2;
+}
+
+.control-pause:focus,
+.control-pause:hover {
+  transition: opacity 1s ease-in 0.5s;
+  opacity: 0.9;
+}
+
+.control-prev {
+  position: absolute;
+  top: 61%;
+  left: -3%;
+  font-size: 68px;
+  z-index: 2;
+  color: #fff;
+  opacity: 0.3;
+}
+
+.control-next {
+  position: absolute;
+  top: 61%;
+  right: -3%;
+  font-size: 68px;
+  z-index: 2;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.control-prev:hover,
+.control-next:hover {
+  opacity: 0.9;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 50px;
+}
+.header__left-block {
+  display: flex;
+  justify-content: space-between;
+  min-width: 490px;
+}
+
+.header__right-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 1em;
+  min-width: 220px;
+}
+
+.header__logo {
+  max-width: 100px;
+  display: flex;
+}
+.header__logo img {
+  height: 42px;
+  margin-right: -9px;
+}
+.header__links {
+  display: flex;
+  align-items: center;
+}
+.header__link {
+  position: relative;
+  margin-right: 45px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #303030;
+}
+.header__link:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 110%;
+  left: -5%;
+  bottom: -1px;
+  z-index: -1;
+  height: 8px;
+  background: #abedff;
+}
+
+.header__link:last-child {
+  margin-right: 0;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+strong {
+  font-size: 1.3rem;
+}
+
+.footer {
+  height: 50px;
+  padding: 20px 30px;
+  color: #000;
+}
+.footer .container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.footer .subtitle {
+  font-size: 20px;
+}
+
+.footer .social {
+  margin-left: 20px;
+}
+
+.footer .link {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #000;
+}
+.footer .call {
+  text-align: right;
+  margin-right: 20px;
 }
