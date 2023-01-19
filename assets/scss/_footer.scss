@@ -1,0 +1,65 @@
+.footer {
+  height: 50px;
+  padding: 20px 30px;
+  color: #000;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include sm {
+      margin-top: -10px;
+    }
+  }
+
+  &__social {
+    margin-left: 20px;
+  }
+
+  &__call {
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  @include sm {
+    padding: 2px 3px;
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+
+  @include md {
+    font-size: 1rem;
+  }
+
+  @include sm {
+    font-size: 0.7rem;
+  }
+}
+
+.link {
+  display: block;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #000;
+
+  @include md {
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+
+  @include sm {
+    font-size: 0.6rem;
+    margin-top: 3px;
+  }
+}
+
+.logo-heart {
+  @include sm {
+    height: 60px;
+    width: 60px;
+  }
+}

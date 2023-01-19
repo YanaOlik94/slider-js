@@ -1,0 +1,71 @@
+.controls {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.control {
+  cursor: pointer;
+  padding: 0.1em;
+  user-select: none;
+
+  @include d-flex-center;
+
+  &-pause {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 6rem);
+    font-size: 8rem;
+    color: #fff;
+    opacity: 0;
+    transition: 3s;
+    z-index: 2;
+
+    @include md {
+      font-size: 6rem;
+    }
+
+    @include sm {
+      font-size: 4rem;
+      top: 53%;
+      left: calc(50% - 2rem);
+    }
+  }
+
+  &-pause:focus,
+  &-pause:hover {
+    transition: opacity 1s ease-in 0.5s;
+    opacity: 0.9;
+  }
+
+  &-prev,
+  &-next {
+    position: absolute;
+    top: 54%;
+    font-size: 5rem;
+    z-index: 2;
+    color: #fff;
+    opacity: 0.5;
+
+    @include md {
+      font-size: 4rem;
+    }
+
+    @include sm {
+      font-size: 3rem;
+    }
+  }
+
+  &-prev {
+    left: 6px;
+  }
+
+  &-next {
+    right: 6px;
+  }
+
+  &-prev:hover,
+  &-next:hover {
+    opacity: 0.9;
+  }
+}

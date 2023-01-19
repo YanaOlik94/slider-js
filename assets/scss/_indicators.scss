@@ -1,0 +1,44 @@
+.indicators {
+  position: absolute;
+  top: 110vh;
+  left: calc(50% - 8rem);
+
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+
+  z-index: 2;
+
+  @include md {
+    left: calc(50% - 5rem);
+  }
+}
+
+.indicator {
+  @include d-flex-center;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  user-select: none;
+
+  width: 28px;
+  height: 2px;
+  padding: 2px;
+  border: 1px solid gray;
+  border-radius: 1em;
+  background-color: #fff;
+  opacity: 0.3;
+
+  &.active {
+    background-color: #fff;
+    opacity: 0.9;
+  }
+
+  @include md {
+    width: 18px;
+  }
+
+  @include sm {
+    width: 13px;
+    height: 1px;
+  }
+}
